@@ -43,7 +43,7 @@ config.scrollback_lines = 10000
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:@│"
 
 -- Silence the terminal bell
-config.audible_bell = "Disabled"
+config.audible_bell = "SystemBeep"
 
 -- Don't resize the window when changing font size
 config.adjust_window_size_when_changing_font_size = false
@@ -53,24 +53,24 @@ config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
 -- Pane keybindings (Vim-style with Cmd)
 config.keys = {
-  -- Split panes
-  { key = "/", mods = "CMD", action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "-", mods = "CMD", action = wezterm.action.SplitVertical   { domain = "CurrentPaneDomain" } },
+	-- Split panes
+	{ key = "/", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "-", mods = "CMD", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
-  -- Navigate panes
-  { key = "h", mods = "CMD", action = wezterm.action.ActivatePaneDirection "Left"  },
-  { key = "j", mods = "CMD", action = wezterm.action.ActivatePaneDirection "Down"  },
-  { key = "k", mods = "CMD", action = wezterm.action.ActivatePaneDirection "Up"    },
-  { key = "l", mods = "CMD", action = wezterm.action.ActivatePaneDirection "Right" },
+	-- Navigate panes
+	{ key = "h", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "l", mods = "CMD", action = wezterm.action.ActivatePaneDirection("Right") },
 
-  -- Resize panes
-  { key = "h", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize { "Left",  5 } },
-  { key = "j", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize { "Down",  5 } },
-  { key = "k", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize { "Up",    5 } },
-  { key = "l", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize { "Right", 5 } },
+	-- Resize panes
+	{ key = "h", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "j", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+	{ key = "k", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "l", mods = "CMD|OPT", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
 
-  -- Close pane
-  { key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane { confirm = false } },
+	-- Close pane
+	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 }
 
 return config
