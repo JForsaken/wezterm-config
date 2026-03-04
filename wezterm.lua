@@ -43,7 +43,7 @@ config.scrollback_lines = 10000
 config.selection_word_boundary = " \t\n{}[]()\"'`,;:@│"
 
 -- Silence the terminal bell
-config.audible_bell = "SystemBeep"
+config.audible_bell = "Disabled"
 
 -- Don't resize the window when changing font size
 config.adjust_window_size_when_changing_font_size = false
